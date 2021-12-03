@@ -1,0 +1,13 @@
+@use '../util' as *;
+
+.header {
+    margin-bottom: rem(60);
+
+    &__logo {
+        width: rem(130);
+
+        @include breakpoint(medium) {
+            width: rem(170);
+        }
+    }
+}

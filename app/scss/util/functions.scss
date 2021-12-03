@@ -1,6 +1,23 @@
-@use "sass:math";
+@use 'breakpoints' as *;
+@use 'sass:math';
 
 // Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
 @function rem($pixels, $context: 16) {
-	@return (math.div($pixels, $context)) * 1rem;
+    @return (math.div($pixels, $context)) * 1rem;
+}
+
+@mixin flex($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: $direction;
+}
+
+@mixin center {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: rem(20);
+
+    @include breakpoint(medium) {
+        padding: 0 rem(20);
+    }
 }

@@ -1,0 +1,76 @@
+@use '../util' as *;
+
+.main {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: rem(50);
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(large) {
+        grid-template-columns: 1fr rem(490);
+    }
+
+    .content {
+        @include breakpoint(large) {
+            margin-top: rem(50);
+        }
+
+        &__title {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+            margin-bottom: rem(20);
+
+            @include breakpoint(medium) {
+                font-size: rem(28);
+                max-width: rem(400);
+                text-align: inherit;
+            }
+
+            @include breakpoint(large) {
+                font-size: rem(35);
+            }
+        }
+
+        &__description {
+            font-family: var(--font-secondary);
+            text-align: center;
+            color: #fff;
+            margin-bottom: rem(20);
+
+            @include breakpoint(medium) {
+                text-align: inherit;
+            }
+        }
+
+        &__btn {
+            font-family: var(--font-primary);
+            background-color: #fff;
+            box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.3);
+            color: var(--background);
+            border: none;
+            border-radius: rem(20);
+            padding: rem(7) rem(70);
+
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            transition: all ease 0.5s;
+
+            &:hover {
+                background-color: var(--hover);
+                color: #fff;
+            }
+
+            @include breakpoint(medium) {
+                margin: 0;
+                padding: rem(10) rem(50);
+            }
+        }
+    }
+}

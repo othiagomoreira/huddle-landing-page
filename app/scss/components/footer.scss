@@ -1,0 +1,29 @@
+@use '../util' as *;
+
+.footer {
+    .social {
+        margin-top: rem(50);
+        @include flex(center);
+        gap: rem(15);
+
+        @include breakpoint(medium) {
+            @include flex(flex-end);
+        }
+
+        &__link {
+            @include flex(center);
+            border: 1px solid #fff;
+            border-radius: 50%;
+            padding: rem(7);
+
+            color: #fff;
+            font-size: rem(20);
+            transition: all ease 0.5s;
+
+            &:hover {
+                border-color: var(--hover);
+                color: var(--hover);
+            }
+        }
+    }
+}
