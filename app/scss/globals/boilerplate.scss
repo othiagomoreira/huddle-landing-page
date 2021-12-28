@@ -13,11 +13,11 @@ html {
 body {
     min-height: 100vh;
     @include flex(center);
-    background: url(/images/bg-mobile.svg) no-repeat, var(--background);
+    background: url(../images/bg-mobile.svg) no-repeat, var(--background);
     background-size: 100%;
 
     @include breakpoint(medium) {
-        background: url(/images/bg-desktop.svg), var(--background);
+        background: url(../images/bg-desktop.svg), var(--background);
     }
 }
 
